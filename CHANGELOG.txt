@@ -1,0 +1,19 @@
+Changelog
+
+v1.0
+- Node WebHook:  
+  - Dùng để kết nối đến các service khác của ứng dụng, node này sẽ lắng nghe và nhận đầu vào input chat của người dùng từ service khác
+
+- Node AI Agent:  
+  - Nhận input chat đầu vào và đưa ra câu trả lời. Câu trả lời sau đó sẽ được chuyển lại service đó để đưa ra cho người dùng
+  - Trong Node AI Agent có các thành phần sau:
+    - OpenAI Chat Model: Mô hình của OpenAI được sử dụng để hiểu và tạo phản hồi cho người dùng
+    - Window Buffer Memory: Dữ liệu cuộc trò chuyện trước đó được lưu trữ tạm thời để giúp chatbot ghi nhớ ngữ cảnh cuộc trò chuyện
+    - Pinecone Vector Store: Đây là cơ sở dữ liệu lưu trữ các embedding vector, được sử dụng để lưu trữ và truy xuất thông tin từ tài liệu
+    - Vector Store Tool:
+      - Công cụ dùng để truy cập và thao tác dữ liệu trong Pinecone
+      - Truy vấn Pinecone để lấy dữ liệu cần thiết, chẳng hạn như thông tin ngữ nghĩa
+      - Cập nhật hoặc thêm dữ liệu mới vào Pinecone khi cần
+    - Embeddings OpenAI:
+      - Nơi OpenAI tạo embedding từ input chat của người dùng
+      - Tạo Embedding từ input chat của người dùng để so khớp và tìm kiếm các phản hồi tương ứng trong Pinecone
