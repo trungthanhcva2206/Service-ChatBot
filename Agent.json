@@ -1,5 +1,6 @@
 {
   "name": "Agent",
+  "license": "GNU/GPL version 3.0",
   "nodes": [
     {
       "parameters": {
